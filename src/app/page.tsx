@@ -1,4 +1,5 @@
-import { courseInfo } from "@/data/courseInfo";
+import { courseInfo, projects } from "@/data/courseInfo";
+import ProjectCard from "@/components/ProjectCard";
 
 export default function Home() {
   return (
@@ -296,10 +297,27 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Placeholder for other sections */}
-        <div className="text-center text-gray-600">
-          <p>Additional course information sections will be added here...</p>
-        </div>
+        {/* Projects Section */}
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            Available Projects
+          </h2>
+
+          <div className="mb-8 text-center max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Choose from two impactful projects that are making a real
+              difference in people's lives. Both projects involve working with
+              real customers and deploying software that will be actively used
+              to help communities around the world.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {projects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
+        </section>
       </main>
     </div>
   );

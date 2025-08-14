@@ -34,14 +34,14 @@
   - Include props for project data and consistent card design
   - _Requirements: 3.1, 3.2, 4.1, 4.4_
 
-- [ ] 6. Implement project details with show/hide functionality
+- [x] 6. Implement project details with show/hide functionality
 
   - Add useState hook to ProjectCard for expanding/collapsing details
   - Display tech stack, required skills, and development needs when expanded
   - Add smooth transitions and clear visual feedback for interactions
   - _Requirements: 3.2, 3.3, 3.4, 4.4_
 
-- [ ] 7. Create projects section layout
+- [x] 7. Create projects section layout
 
   - Import and use ProjectCard components for both iCradle and CBR projects
   - Arrange project cards in responsive grid layout

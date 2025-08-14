@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 interface Project {
   id: string;
   name: string;
@@ -16,6 +20,7 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const [showDetails, setShowDetails] = useState(false);
   return (
     <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-lg hover:border-gray-300 transition-all duration-200">
       {/* Project Header */}
@@ -78,6 +83,130 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 ? `${project.impact.substring(0, 120)}...`
                 : project.impact}
             </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Expand/Collapse Button */}
+      <div className="border-t border-gray-100 pt-4 mt-4">
+        <button
+          onClick={() => setShowDetails(!showDetails)}
+          className="w-full flex items-center justify-center px-4 py-2 text-sm font-medium text-blue-600 bg-blue-50 border border-blue-200 rounded-md hover:bg-blue-100 hover:border-blue-300 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        >
+          <span>{showDetails ? "Hide Details" : "Show Details"}</span>
+          <svg
+            className={`ml-2 h-4 w-4 transform transition-transform duration-200 ${
+              showDetails ? "rotate-180" : ""
+            }`}
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+      </div>
+
+      {/* Expandable Details Section */}
+      <div
+        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+          showDetails ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="pt-4 space-y-6">
+          {/* Complete Tech Stack */}
+          <div>
+            <h4 className="text-sm font-medium text-gray-900 mb-3">
+              Complete Tech Stack
+            </h4>
+            <div className="flex flex-wrap gap-2">
+              {project.techStack.map((tech, index) => (
+                <span
+                  key={index}
+                  className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Required Skills */}
+          <div>
+            <h4 className="text-sm font-medium text-gray-900 mb-3">
+              Required Skills
+            </h4>
+            <ul className="space-y-2">
+              {project.necessarySkills.map((skill, index) => (
+                <li key={index} className="flex items-start">
+                  <svg
+                    className="h-4 w-4 text-green-600 mt-0.5 mr-2 flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span className="text-sm text-gray-700">{skill}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Useful Experience */}
+          {project.usefulExperience && project.usefulExperience.length > 0 && (
+            <div>
+              <h4 className="text-sm font-medium text-gray-900 mb-3">
+                Useful Experience
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {project.usefulExperience.map((experience, index) => (
+                  <span
+                    key={index}
+                    className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700"
+                  >
+                    {experience}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Development Needs */}
+          <div>
+            <h4 className="text-sm font-medium text-gray-900 mb-3">
+              Development Needs
+            </h4>
+            <ul className="space-y-2">
+              {project.developmentNeeds.map((need, index) => (
+                <li key={index} className="flex items-start">
+                  <svg
+                    className="h-4 w-4 text-blue-600 mt-0.5 mr-2 flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                  <span className="text-sm text-gray-700">{need}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

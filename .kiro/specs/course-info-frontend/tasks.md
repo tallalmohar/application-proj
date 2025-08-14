@@ -48,14 +48,14 @@
   - Add section heading and introductory text
   - _Requirements: 3.1, 3.5, 3.6, 4.3_
 
-- [ ] 8. Add responsive design and mobile optimization
+- [x] 8. Add responsive design and mobile optimization
 
   - Test and refine layouts across mobile, tablet, and desktop breakpoints
   - Ensure text remains readable and interactive elements are touch-friendly
   - Optimize spacing and typography for different screen sizes
   - _Requirements: 4.3, 4.1_
 
-- [ ] 9. Implement basic accessibility features
+- [x] 9. Implement basic accessibility features
 
   - Add proper heading hierarchy (h1, h2, h3) throughout the page
   - Include alt text for any icons or images used
@@ -63,12 +63,13 @@
   - Test color contrast and readability
   - _Requirements: 4.1, 4.2_
 
-- [ ] 10. Polish styling and add final touches
+- [x] 10. Polish styling and add final touches
 
   - Refine color scheme and ensure consistent styling throughout
   - Add subtle hover effects and transitions where appropriate
   - Optimize typography and spacing for professional appearance
   - Test cross-browser compatibility
+  - Make sure all the information is correct inside each card and is gramatically correct.
   - _Requirements: 4.1, 4.2, 5.3_
 
 - [ ] 11. Create simple Section component for reusability

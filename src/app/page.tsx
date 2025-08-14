@@ -5,16 +5,17 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <header className="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
-        <div className="max-w-4xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+      <header className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-transparent"></div>
+        <div className="relative max-w-4xl mx-auto px-4 py-16 sm:py-20 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-balance">
               {courseInfo.title}
             </h1>
-            <p className="text-xl sm:text-2xl text-blue-100 mb-2">
+            <p className="text-xl sm:text-2xl md:text-3xl text-blue-100 mb-4 font-medium">
               Instructor: {courseInfo.instructor}
             </p>
-            <p className="text-lg text-blue-200 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-blue-200 max-w-3xl mx-auto leading-relaxed px-2 text-balance">
               Build professional-quality software tools that make a real
               difference in people's lives
             </p>
@@ -23,23 +24,24 @@ export default function Home() {
       </header>
 
       {/* Main Content Container */}
-      <main className="max-w-4xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+      <main className="max-w-4xl mx-auto px-4 py-8 sm:py-12 sm:px-6 lg:px-8">
         {/* Eligibility Criteria Section */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+        <section className="mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 sm:mb-12 text-center px-2 text-balance">
             Is CMPT 415 for you?
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {/* Good Fit Criteria */}
-            <div className="bg-green-50 border border-green-200 rounded-lg p-6">
-              <div className="flex items-center mb-4">
-                <div className="flex-shrink-0">
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-xl p-6 sm:p-8 card-hover shadow-sm">
+              <div className="flex items-center mb-6">
+                <div className="flex-shrink-0 p-2 bg-green-100 rounded-lg">
                   <svg
-                    className="h-6 w-6 text-green-600"
+                    className="h-6 w-6 sm:h-7 sm:w-7 text-green-600"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
+                    aria-hidden="true"
                   >
                     <path
                       strokeLinecap="round"
@@ -49,11 +51,11 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="ml-3 text-xl font-semibold text-green-800">
+                <h3 className="ml-4 text-xl sm:text-2xl font-bold text-green-800">
                   Great choice if you...
                 </h3>
               </div>
-              <ul className="space-y-3">
+              <ul className="space-y-3 sm:space-y-4">
                 {courseInfo.goodFitCriteria.map((criterion, index) => (
                   <li key={index} className="flex items-start">
                     <div className="flex-shrink-0 mt-1">
@@ -62,6 +64,7 @@ export default function Home() {
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
+                        aria-hidden="true"
                       >
                         <path
                           strokeLinecap="round"
@@ -71,21 +74,24 @@ export default function Home() {
                         />
                       </svg>
                     </div>
-                    <span className="ml-3 text-gray-700">{criterion}</span>
+                    <span className="ml-3 text-sm sm:text-base text-gray-700 leading-relaxed">
+                      {criterion}
+                    </span>
                   </li>
                 ))}
               </ul>
             </div>
 
             {/* Poor Fit Criteria */}
-            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
-              <div className="flex items-center mb-4">
-                <div className="flex-shrink-0">
+            <div className="bg-gradient-to-br from-amber-50 to-yellow-50 border border-amber-200 rounded-xl p-6 sm:p-8 card-hover shadow-sm">
+              <div className="flex items-center mb-6">
+                <div className="flex-shrink-0 p-2 bg-amber-100 rounded-lg">
                   <svg
-                    className="h-6 w-6 text-yellow-600"
+                    className="h-6 w-6 sm:h-7 sm:w-7 text-amber-600"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
+                    aria-hidden="true"
                   >
                     <path
                       strokeLinecap="round"
@@ -95,19 +101,20 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="ml-3 text-xl font-semibold text-yellow-800">
+                <h3 className="ml-4 text-xl sm:text-2xl font-bold text-amber-800 leading-tight text-balance">
                   Better off doing a different course if you...
                 </h3>
               </div>
-              <ul className="space-y-3">
+              <ul className="space-y-3 sm:space-y-4">
                 {courseInfo.poorFitCriteria.map((criterion, index) => (
                   <li key={index} className="flex items-start">
                     <div className="flex-shrink-0 mt-1">
                       <svg
-                        className="h-4 w-4 text-yellow-600"
+                        className="h-4 w-4 text-amber-600"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
+                        aria-hidden="true"
                       >
                         <path
                           strokeLinecap="round"
@@ -117,7 +124,9 @@ export default function Home() {
                         />
                       </svg>
                     </div>
-                    <span className="ml-3 text-gray-700">{criterion}</span>
+                    <span className="ml-3 text-sm sm:text-base text-gray-700 leading-relaxed">
+                      {criterion}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -125,40 +134,40 @@ export default function Home() {
           </div>
 
           {/* Prerequisites Section */}
-          <div className="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
-            <h3 className="text-xl font-semibold text-blue-800 mb-4">
+          <div className="mt-8 sm:mt-10 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-6 sm:p-8 card-hover shadow-sm">
+            <h3 className="text-xl sm:text-2xl font-bold text-blue-800 mb-6">
               Prerequisites & Selection
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <div>
-                <h4 className="font-medium text-gray-900 mb-2">
+                <h4 className="font-medium text-gray-900 mb-2 text-sm sm:text-base">
                   GPA Requirements
                 </h4>
-                <p className="text-gray-700 text-sm">
+                <p className="text-gray-700 text-xs sm:text-sm leading-relaxed">
                   {courseInfo.prerequisites.gpa}
                 </p>
               </div>
               <div>
-                <h4 className="font-medium text-gray-900 mb-2">
+                <h4 className="font-medium text-gray-900 mb-2 text-sm sm:text-base">
                   Experience Expected
                 </h4>
-                <p className="text-gray-700 text-sm">
+                <p className="text-gray-700 text-xs sm:text-sm leading-relaxed">
                   {courseInfo.prerequisites.experience}
                 </p>
               </div>
               <div>
-                <h4 className="font-medium text-gray-900 mb-2">
+                <h4 className="font-medium text-gray-900 mb-2 text-sm sm:text-base">
                   Relevant Courses
                 </h4>
-                <p className="text-gray-700 text-sm">
+                <p className="text-gray-700 text-xs sm:text-sm leading-relaxed">
                   {courseInfo.prerequisites.relevantCourses}
                 </p>
               </div>
               <div>
-                <h4 className="font-medium text-gray-900 mb-2">
+                <h4 className="font-medium text-gray-900 mb-2 text-sm sm:text-base">
                   Selection Process
                 </h4>
-                <p className="text-gray-700 text-sm">
+                <p className="text-gray-700 text-xs sm:text-sm leading-relaxed">
                   {courseInfo.prerequisites.selectionProcess}
                 </p>
               </div>
@@ -167,21 +176,22 @@ export default function Home() {
         </section>
 
         {/* Course Structure Section */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+        <section className="mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 sm:mb-12 text-center px-2 text-balance">
             Course Structure & Expectations
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
             {/* Meeting Format Card */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-              <div className="flex items-center mb-4">
-                <div className="flex-shrink-0">
+            <div className="bg-white border border-gray-200 rounded-xl p-6 sm:p-8 shadow-sm card-hover">
+              <div className="flex items-center mb-6">
+                <div className="flex-shrink-0 p-3 bg-blue-100 rounded-lg">
                   <svg
-                    className="h-6 w-6 text-blue-600"
+                    className="h-6 w-6 sm:h-7 sm:w-7 text-blue-600"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
+                    aria-hidden="true"
                   >
                     <path
                       strokeLinecap="round"
@@ -197,24 +207,25 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="ml-3 text-xl font-semibold text-gray-900">
+                <h3 className="ml-4 text-xl sm:text-2xl font-bold text-gray-900">
                   Meeting Format
                 </h3>
               </div>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                 {courseInfo.courseStructure.meeting}
               </p>
             </div>
 
             {/* Time Commitment Card */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-              <div className="flex items-center mb-4">
-                <div className="flex-shrink-0">
+            <div className="bg-white border border-gray-200 rounded-xl p-6 sm:p-8 shadow-sm card-hover">
+              <div className="flex items-center mb-6">
+                <div className="flex-shrink-0 p-3 bg-blue-100 rounded-lg">
                   <svg
-                    className="h-6 w-6 text-blue-600"
+                    className="h-6 w-6 sm:h-7 sm:w-7 text-blue-600"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
+                    aria-hidden="true"
                   >
                     <path
                       strokeLinecap="round"
@@ -224,32 +235,33 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="ml-3 text-xl font-semibold text-gray-900">
+                <h3 className="ml-4 text-xl sm:text-2xl font-bold text-gray-900">
                   Time Commitment
                 </h3>
               </div>
               <div className="space-y-2">
-                <p className="text-gray-700">
+                <p className="text-sm sm:text-base text-gray-700">
                   <span className="font-medium text-gray-900">
                     Weekly Hours:
                   </span>{" "}
                   {courseInfo.courseStructure.weeklyHours}
                 </p>
-                <p className="text-gray-700 text-sm leading-relaxed">
+                <p className="text-gray-700 text-xs sm:text-sm leading-relaxed">
                   {courseInfo.courseStructure.timeCommitment}
                 </p>
               </div>
             </div>
 
             {/* Assessment Card */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-              <div className="flex items-center mb-4">
-                <div className="flex-shrink-0">
+            <div className="bg-white border border-gray-200 rounded-xl p-6 sm:p-8 shadow-sm card-hover">
+              <div className="flex items-center mb-6">
+                <div className="flex-shrink-0 p-3 bg-blue-100 rounded-lg">
                   <svg
-                    className="h-6 w-6 text-blue-600"
+                    className="h-6 w-6 sm:h-7 sm:w-7 text-blue-600"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
+                    aria-hidden="true"
                   >
                     <path
                       strokeLinecap="round"
@@ -259,24 +271,25 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="ml-3 text-xl font-semibold text-gray-900">
+                <h3 className="ml-4 text-xl sm:text-2xl font-bold text-gray-900">
                   Assessment
                 </h3>
               </div>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                 {courseInfo.courseStructure.assessment}
               </p>
             </div>
 
             {/* Licensing Card */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-              <div className="flex items-center mb-4">
-                <div className="flex-shrink-0">
+            <div className="bg-white border border-gray-200 rounded-xl p-6 sm:p-8 shadow-sm card-hover">
+              <div className="flex items-center mb-6">
+                <div className="flex-shrink-0 p-3 bg-blue-100 rounded-lg">
                   <svg
-                    className="h-6 w-6 text-blue-600"
+                    className="h-6 w-6 sm:h-7 sm:w-7 text-blue-600"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
+                    aria-hidden="true"
                   >
                     <path
                       strokeLinecap="round"
@@ -286,11 +299,11 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="ml-3 text-xl font-semibold text-gray-900">
+                <h3 className="ml-4 text-xl sm:text-2xl font-bold text-gray-900">
                   Licensing
                 </h3>
               </div>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                 {courseInfo.courseStructure.licensing}
               </p>
             </div>
@@ -298,13 +311,13 @@ export default function Home() {
         </section>
 
         {/* Projects Section */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+        <section className="mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 sm:mb-12 text-center px-2 text-balance">
             Available Projects
           </h2>
 
-          <div className="mb-8 text-center max-w-3xl mx-auto">
-            <p className="text-lg text-gray-700 leading-relaxed">
+          <div className="mb-8 sm:mb-12 text-center max-w-4xl mx-auto px-2">
+            <p className="text-lg sm:text-xl text-gray-700 leading-relaxed text-balance">
               Choose from two impactful projects that are making a real
               difference in people's lives. Both projects involve working with
               real customers and deploying software that will be actively used
@@ -312,7 +325,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
             {projects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}

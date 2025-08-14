@@ -27,7 +27,7 @@
   - Add clear visual hierarchy with headings and readable text
   - _Requirements: 2.1, 2.2, 2.3, 2.4_
 
-- [ ] 5. Create reusable ProjectCard component
+- [x] 5. Create reusable ProjectCard component
 
   - Build simple card component that displays project name, student count, and description
   - Add basic hover effects and clean styling

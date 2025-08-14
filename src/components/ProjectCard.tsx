@@ -131,7 +131,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <div
         id={`project-details-${project.id}`}
         className={`overflow-hidden transition-all duration-500 ease-in-out ${
-          showDetails ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+          showDetails ? "max-h-10000 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="pt-6 space-y-6 sm:space-y-8 border-t border-gray-100 mt-6">

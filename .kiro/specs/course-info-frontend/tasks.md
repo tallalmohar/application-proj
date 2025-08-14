@@ -13,14 +13,14 @@
   - Create responsive container with proper spacing
   - _Requirements: 1.1, 4.1, 4.3_
 
-- [ ] 3. Implement eligibility criteria section
+- [x] 3. Implement eligibility criteria section
 
   - Create two-column layout showing "good fit" vs "poor fit" criteria
   - Add visual indicators (checkmarks for good fit, warning icons for poor fit)
   - Make responsive - stack vertically on mobile, side-by-side on desktop
   - _Requirements: 1.2, 1.3, 4.3_
 
-- [ ] 4. Build course structure information section
+- [x] 4. Build course structure information section
 
   - Display meeting format, time commitment, assessment, and licensing info
   - Use simple card layout with consistent spacing
